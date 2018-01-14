@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
+		<link rel="shortcut icon" href="/img/yggdrasil.ico">
+		<title>yggdrasilView</title>
+	</head>
+	<body  >
+		<div class="container">
+			<div class="main">
+				<div class="header">
+					<div class="title">
+						<h1>yggdrasilView</h1>
+					</div>
+				</div>
+				<div class="content">
+					<div class="item">
+						<h1>Backup the flash memory of the BBBW</h1>
+						<ul>
+						 	<li>With the BBBW powered off insert a blank micro SD card into the BBBW. The micro SD card slot is near the USB port</li>
+						 	<li>Insert a micro-USB cable into the BBBW and connect the other end into your linux computer.
+								<ul>
+								 	<li>Make sure the micro-USB cable supports data transfer. You can buy plenty of cheap cables that only supply 5V power. Throw those away!</li>
+								</ul>
+							</li>
+ 							<li>Wait for the BBBW to boot - it takes about three minutes.
+								<ul>
+								 	<li>You should see the wireless (WL) LED, the BlueTooth (BT) LED light up and the USB0 LED blink.</li>
+								</ul>
+							</li>
+						 	<li>Open a terminal and log into the BBBW with
+								<ul>
+								 	<li>$ <strong>ssh root@192.168.7.2</strong>
+										<ul>
+ 											<li>In the initial configuration there is no password required for root</li>
+										</ul>
+									</li>
+ 									<li>Backup the flash memory by typing:
+										<ul>
+										 	<li>$ <strong>/opt/scripts/tools/eMMC/beaglebone-black-make-microSD-flasher-from-eMMC.sh</strong></li>
+										 	<li>It will take about 20-30 minutes to backup the flash. The terminal will give you progress on the backup.</li>
+										 	<li>When the backup is complete, the BBBW will power down itself.</li>
+										 	<li>Eject the micro-SD card and insert into your linux computer (not the BBBW).
+												<ul>
+												 	<li>edit the /boot/uEnv.txt file on the Linux partition on the microSD card
+														<ul>
+ 															<li>add the '#' on the line with
+																<ul>
+ 																	<li>'cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh'.</li>
+																</ul>
+															</li>
+ 															<li>remove the '#' on the line with
+																<ul>
+ 																	<li>cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3-bbbw.sh</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+ 													<li>To restore the flash memory, insert the backup SD card into the BBBW and power on.
+														<ul>
+														 	<li>The backup will begin automatically.</li>
+														 	<li>It will take 15 minutes to restore.</li>
+														 	<li>During the restore only the USBn LED scan back and forth and the WL and BT LEDs are off.</li>
+														 	<li>When the restore is complete, the BBBW powers down</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="sidenav">
+				<a href="/index.html"><h1>Overview</h1></a>
+				<ul>
+					<li><a href="/services.html">Services</a></li>
+					<li><a href="/solutions.html">Solutions</a></li>
+					<li><a href="/tutorial.html">Tutorial</a></li>
+				</ul>
+				<a href="/tutorial.html"><h1>Tutorial</h1></a>
+				<ul>
+				 	<li><a href="/tutorial/test-device-design.html">Test Device Design</a></li>
+				 	<li><a href="/tutorial/setup-mqtt.html">Setup MQTT</a></li>
+				 	<li><a href="/tutorial/input-output-controller.html">IOC with a BBBW</a></li>
+				 	<li><a href="/tutorial/node-red-web-application.html">Node-Red Web Application</a></li>
+				</ul>
+				<a href="/tutorial/input-output-controller.html"><h1>IOC with a BBBW</h1></a>
+				<ul>
+				 	<li><a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless.html">Setup the BBBW</a></li>
+				 	<li><a href="/tutorial/input-output-controller/configure-the-ioc-with-node-red.html">Configure the IOC With Node-Red</a></li>
+				</ul>
+				<a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless.html"><h1>Setup the BBBW</h1></a>
+				<ul>
+				 	<li><a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless/backup-the-flash-memory-of-the-bbbw.html">Backup the BBBW</a></li>
+				 	<li><a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless/change-the-passwords.html">Change the Passwords</a></li>
+				 	<li><a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless/change-the-host-name.html">Change the host name</a></li>
+				 	<li><a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless/setup-the-wireless.html">Setup the wireless</a></li>
+				 	<li><a href="/tutorial/input-output-controller/setup-the-beaglebone-wireless/configure-node-red.html">Configure Node-Red</a></li>
+				</ul>
+			</div>
+			<div class="clearer"><span /></div>
+			<div class="footer"><p>yggdrasilView</p></div>
+		</div>
+	</body>
+</html>

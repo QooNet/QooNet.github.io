@@ -147,11 +147,12 @@ h1,h2,h3 {
 .content li {
 	list-style: url(img/li.gif);
 	margin-left: 18px;
-}
-.li1 {
-	list-style: url(img/li.gif);
-	margin-left: 36px;
 	font-size: 1.0em;
+	padding-top: 3px;
+}
+.content ul {
+	font-size: 1.0em;
+	padding-bottom: 10px;
 }
 
 /* search form */
