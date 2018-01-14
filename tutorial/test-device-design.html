@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
+		<link rel="shortcut icon" href="/img/yggdrasil.ico">
+		<title>yggdrasilView</title>
+	</head>
+	<body  >
+		<div class="container">
+			<div class="main">
+				<div class="header">
+					<div class="title">
+						<h1>yggdrasilView</h1>
+					</div>
+				</div>
+				<div class="content">
+					<div class="item">
+						<h1>Test Device Design</h1>
+						<p>We will build a simple device that can demonstrate local and remote control and remote monitoring. The device will consist of two LEDs, one red, one green, and two push buttons, again one red, one green. The requirements for the device are:</p>
+						<ul>
+						 	<li>When one of the push buttons is pressed, the corresponding LED will toggle</li>
+						 	<li>The toggle state of an LED should be viewable on the web application</li>
+						 	<li>The toggle state of an LED can be changed by the web application</li>
+						 	<li>The intensity of an LED can be changed by the web application</li>
+						 	<li>The intensity of an LED will be displayed on the web application</li>
+						</ul>
+						<p>The circuit that fulfills these requirements is shown below. The <a href="http://fritzing.org/home/" target="_blank" rel="noopener">Fritzing</a> circuit can be found <a href="https://github.com/ice-tech-systems/yggdrasil-tutorial/blob/fritz/yggdrasilDemo.fzz?raw=true" target="_blank" rel="noopener">here</a>.
+						</p>
+						<ul>
+						 	<li>The intensity of the LEDS can be controlled be connecting the anode of the LEDs to Pulse Width Modulator (PWM) pins on the Beagle Bone Black Wireless.</li>
+						 	<li>From the <a href="http://beagleboard.org/static/images/cape-headers.png" target="_blank" rel="noopener">pinout diagram</a> of the Beagle Bone, there are 7 PWM pins available.</li>
+						 	<ul class="li1">
+								<li>We will use P9_14 for the green LED and P9_16 for the red LED.</li>
+						 		<li>We will use P9_1 as the ground pin and P9_3 as the voltage pin</li>
+							</ul>
+						</ul>
+						<table><tbody>
+							<tr>
+								<td style="text-align: center;"><a href="/images/tutorial/demoBreadBoardPhoto.jpg" target="_blank" rel="noopener">Breadboard</a></td>
+								<td style="text-align: center;"><a href="/images/tutorial/demoBreadBoard.png" target="_blank" rel="noopener">Breadboard View</a></td>
+								<td style="text-align: center;"><a href="/images/tutorial/demoSchem.png" target="_blank" rel="noopener">Circuit</a></td>
+								<td style="text-align: center;"><a href="/images/tutorial/demoPcb.png" target="_blank" rel="noopener">PCB Layout</a></td>
+							</tr>
+							<tr>
+								<td><a href="/images/tutorial/demoBreadBoardPhoto.jpg" target="_blank" rel="noopener"><img src="/images/tutorial/demoBreadBoardPhoto.jpg" width="156 height=200" /></a></td>
+								<td><a href="/images/tutorial/demoBreadBoard.png" target="_blank" rel="noopener"><img src="/images/tutorial/demoBreadBoard.png" alt="" width="154" height="200" /></a></td>
+								<td><a href="/images/tutorial/demoSchem.png" target="_blank" rel="noopener"><img src="/images/tutorial/demoSchem.png" alt="" width="260" height="200" /></a></td>
+								<td><a href="/images/tutorial/demoPcb.png" target="_blank" rel="noopener"><img src="/images/tutorial/demoPcb.png" alt="" width="158" height="200" /></a></td>
+							</tr>
+						</tbody></table>
+					</div>	
+				</div>
+			</div>
+			<div class="sidenav">
+				<a href="/index.html"><h1>Overview</h1></a>
+				<ul>
+					<li><a href="/services.html">Services</a></li>
+					<li><a href="/solutions.html">Solutions</a></li>
+					<li><a href="/tutorial.html">Tutorial</a></li>
+				</ul>
+				<a href="/tutorial.html"><h1>Tutorial</h1></a>
+				<ul>
+				 	<li><a href="/tutorial/test-device-design.html">Test Device Design</a></li>
+				 	<li><a href="/tutorial/setup-mqtt.html">Setup MQTT</a></li>
+				 	<li><a href="/tutorial/input-output-controller.html">Input-Output Controller with a BeagleBone Black Wireless</a></li>
+				 	<li><a href="/tutorial/node-red-web-application.html">Node-Red Web Application</a></li>
+				</ul>
+			</div>
+			<div class="clearer"><span /></div>
+			<div class="footer"><p>yggdrasilView</p></div>
+		</div>
+	</body>
+</html>

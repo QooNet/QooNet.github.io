@@ -50,7 +50,7 @@ h1,h2,h3 {
 	padding-bottom: 6px;
 }
 .header {
-	background: url(img/header.gif) repeat-x;
+	background: url(img/yggdrasil160.jpg) no-repeat, url(img/header.gif) repeat-x
 }
 
 /* title */
@@ -147,6 +147,11 @@ h1,h2,h3 {
 .content li {
 	list-style: url(img/li.gif);
 	margin-left: 18px;
+}
+.li1 {
+	list-style: url(img/li.gif);
+	margin-left: 36px;
+	font-size: 1.0em;
 }
 
 /* search form */
