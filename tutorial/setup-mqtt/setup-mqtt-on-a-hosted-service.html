@@ -16,9 +16,38 @@
 				<div class="content">
 					<div class="item">
 						<h1>Setup MQTT on a hosted service</h1>
+						<p>We will use <a href="http://mqtt.org/" target="_blank">MQTT</a> as the communication protocol between Input-Ouput controllers and the Web applications.
+							To use MQTT we need to have an MQTT broker that can pass messages back and forth between the IOCs and the Web applications.
+							To begin with we will a hosted MQTT broker. We recommend that you start with <a href="https://shiftr.io/" target="_blank">shiftr.io</a> because it offers an excellent visulation tool and is currently free of charge.
+						</p>
 						<ul>
-						 	<li>Coming Soon</li>
+							<li>Sign up for a free account at <a href="https://shiftr.io/" target="_blank">shiftr.io</a> and log in.</li>
+							<li>Create a new name space by clicking on the New Namespace button</li>
+							<li>In this example, I chose to name the Namespace mqttExample</li>
+							<li>After the name space has been created, click on Namespace settings and add a Token</li>
+							<li>You can change the key and passsword to whatever you want but I usually go with shifr.io's suggestion</li>
+							<li>Keep the token at full-access permission.</li>
+						</ul>
+						<p>To test the MQTT connection, I use MQTTLens which is
+							<a href="https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm?hl=en" target="_blank">Chrome Web App</a>
+							that is free of charge. You will need either Chrome or Chromium as a browser.
+						</p>
 						<ul>
+							<li>Once MQTTLens has been installed, add a new connection
+								<ul>
+									<li>The host name is tcp://broker.shiftr.io</li>
+									<li>The port is 1883</li>
+									<li>The username and password must match the key and secret of the token for the shiftr.io namespace that you created earlier</li>
+									<li>The connection name can be anything you would like</li>
+									<li>It is best to generate a random ID for the Client ID</li>
+									<li>
+										<a href="/images/tutorial/MQTTLens.png" target="_blank" rel="noopener">
+											<img src="/images/tutorial/MQTTLens.png" width="300" height="200"/>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
