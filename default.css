@@ -19,9 +19,14 @@ input {
 	color: #555;
 	font: normal 1.1em "Lucida Sans Unicode",sans-serif;
 }
-p,cite,code,ul {
-	font-size: 1.2em;
-	padding-bottom: 1.2em;
+cite,ul {
+	font-size: 1.0em;
+	padding-bottom: 1.0em;
+}
+p {
+	font-size: 1.0em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
 h1 {
 	font-size: 1.4em;
@@ -42,6 +47,19 @@ h1,h2,h3 {
 /* misc */
 .clearer {
 	clear: both;
+}
+.code-pre {
+	font-size: 1.0em;
+	background: #000000;
+	color: #ffffff;
+	width: 90%;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	padding-left: 1.0em;
+	overflow-x:scroll;
+}
+.highlight {
+	color: #ff0000;
 }
 
 /* structure */
@@ -98,7 +116,7 @@ h1,h2,h3 {
 	background: #EEE;
 	border: 1px solid #E5E5E5;
 	float: left;
-	width: 15%;
+	width: 25%;
 }
 .sidenav h1 {
 	color: #666;
@@ -117,11 +135,12 @@ h1,h2,h3 {
 	border-top: none;
 	list-style: none;
 	margin: 0;
+	font-size: 1.0em;
 }
 .sidenav li a {
 	color: #777;
 	display: block;
-	font-size: 0.9em;
+	font-size: 1.0em;
 	padding: 3px 6px 3px 14px;
 	text-decoration: none;
 }
@@ -132,7 +151,7 @@ h1,h2,h3 {
 /* content */
 .content {
 	float: right;
-	width: 84%;
+	width: 74%;
 }
 .content .item {
 	padding: 6px 12px;

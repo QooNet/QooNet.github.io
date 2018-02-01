@@ -16,9 +16,82 @@
 				<div class="content">
 					<div class="item">
 						<h1>Setup MQTT</h1>
+						<p>We will use <a href="http://mqtt.org/" target="_blank">MQTT</a> as the communication protocol between Input-Ouput controllers and the Web applications.
+							To use MQTT we need to have an MQTT broker that can pass messages back and forth between the IOCs and the Web applications.
+							We recommend that you start with <a href="https://shiftr.io/" target="_blank">shiftr.io</a> because it offers an excellent visulation tool and is currently free of charge.
+						</p>
+						<h1>Setup MQTT on a local server</h1>
+						<p><a href="http://mosquitto.org/" target="_blank">Mosquitto</a> is an open-source message broker service that uses the
+							 Mosquitto can be installed on any linux computer even a RaspberryPi or a BeagleBone Black. However, if the Mosquitto server is installed behind a firewall,
+							 you must add an ssh tunnel to a computer outside the firewall or configure port forwarding on your router</p>
 						<ul>
-						 	<li><a href="/tutorial/setup-mqtt/setup-mqtt-on-a-hosted-service.html">Setup MQTT on a hosted service</a></li>
-						 	<li><a href="/tutorial/setup-mqtt/setup-mqtt-on-a-local-server.html">Setup MQTT on a local server</a></li>
+							<li>Create user "mosquitto"
+						  	<p>Mosquitto wants to run as user <b><i>mosquitto</i></b>,  adduser mosquitto</p>
+						  	<pre class="code-pre" ><code langs="">sudo adduser mosquitto</code></pre>
+							</li>
+							<li>Install Mosquitto
+						  	<p>Install mosquitto dependencies</p>
+						  	<pre class="code-pre "><code langs="">sudo apt-get update
+sudo apt-get install build-essential libwrap0-dev libssl-dev libc-ares-dev uuid-dev xsltproc</code></pre>
+						  	<p>Download the latest release of mosquitto listed here: <a href="http://mosquitto.org/download/" target="_blank">http://mosquitto.org/download/</a></p>
+						  	<pre class="code-pre "><code langs="">sudo cd /home/mosquitto
+sudo wget http://mosquitto.org/files/source/mosquitto-1.4.8.tar.gz
+sudo tar xvzf mosquitto-1.4.8.tar.gz
+sudo cd mosquitto-1.4.8</code></pre>
+						  	<p>Run <b><i>make</i></b> to compile and <b><i>make install</i></b> to install</p>
+						  	<pre class="code-pre "><code langs="">sudo make
+sudo make install</code></pre>
+							</li>
+							<li>Setup Mosquitto
+								<p>Create a mosquitto user/password: </p>
+								<pre class="code-pre "><code langs="">sudo mosquitto_passwd -c /etc/mosquitto/pwfile &lt;mqttUser&gt;</code></pre>
+								<p><span class="highlight">Enter a name for the &lt;mqttUser&gt;.
+									You will be prompted to enter a password.</span></p>
+								<p>Create the directory where persistence db files will be stored, change owner to mosquitto:</p>
+								<pre class="code-pre "><code langs="">sudo mkdir /var/lib/mosquitto/
+sudo chown mosquitto:mosquitto /var/lib/mosquitto/ -R</code></pre>
+								<p>Create a config file:</p>
+								<pre class="code-pre "><code langs="">sudo nano /etc/mosquitto/mosquitto.conf</code></pre>
+								<p>Paste the following code into the <b><i>nano</i></b> editor</p>
+								<pre class="code-pre "><code langs="">pid_file /var/run/mosquitto.pid
+persistence true
+persistence_location /var/lib/mosquitto/
+log_dest file /var/log/mosquitto/mosquitto.log
+include_dir /etc/mosquitto/conf.d
+listener &lt;mqttPortNo&gt; &lt;mqttIP&gt;
+persistence true
+persistence_file mosquitto.db
+log_dest syslog
+log_dest stdout
+log_dest topic
+log_type error
+log_type warning
+log_type notice
+log_type information
+connection_messages true
+log_timestamp true
+allow_anonymous false
+password_file /etc/mosquitto/pwfile</code></pre>
+								<p><span class="highlight">replace &lt;mqttPortNo&gt; &lt;mqttIP&gt; with an unused port number on your linux machine (1883 or 8883 is commonly used) and the IP address of your linux machine</span></p>
+								<p><span class="highlight">Type control-x</span> to save the changes</p>
+								<p>Finally be sure to run:</p>
+								<pre class="code-pre "><code langs="">/sbin/ldconfig</code></pre>
+							</li>
+							<li>Run/Test Mosquitto
+								<p>Run the mosquitto server with this command:</p>
+								<pre class="code-pre"><code langs="">mosquitto -c /etc/mosquitto/mosquitto.conf</code></pre>
+								<p>It should start running without error</p>
+								<p>Then in another window or on another computer: </p>
+								<pre class="code-pre"><code langs="">mosquitto_sub -h &lt;mqttIP&gt; -p &lt;mqttPortNo&gt; -u &lt;mqttUser&gt; -P &lt;mqttUserPassword&gt; -v -t 'myTopic/#'  </code></pre>
+								<p><span class="highlight">Replace &lt;mqttIP&gt;, &lt;mqttPortNo&gt;, &lt;mqttUser&gt; and &lt;mqttUserPassword&gt; with your own stuff</span></p>
+								<p>In the window where mosquitto server is running should acknowledge the connection. Then in third window enter:</p>
+								<pre class="code-pre"><code langs="">mosquitto_pub -h &lt;mqttIP&gt; -p &lt;mqttPortNo&gt; -u &lt;mqttUser&gt; -P &lt;mqttUserPassword&gt;  -t 'myTopic/hello' -m 'Hello World'</code></pre>
+								<p>You should see the acknowledgement in the server window and the echo of the topic and message in the
+									subscribe (second)  window</p>
+								<p>Another convenient program to test the MQTT connection is MQTTLens which is
+									<a href="https://chrome.google.com/webstore/detail/mqttlens/hemojaaeigabkbcookmlgmdigohjobjm?hl=en" target="_blank">Chrome Web App</a>
+							  	that is free of charge. You will need either Chrome or Chromium as a browser.
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -29,12 +102,12 @@
 					<li><a href="/projects.html">Projects</a></li>
 					<li><a href="/tutorial.html">Tutorial</a></li>
 					<li><a href="https://github.com/yggdrasilView" target="_blank" rel="noopener">Code Base</a></li>
-			</ul>
+				</ul>
 				<a href="/tutorial.html"><h1>Tutorial</h1></a>
 				<ul>
 				 	<li><a href="/tutorial/test-device-design.html">Test Device Design</a></li>
 				 	<li><a href="/tutorial/setup-mqtt.html">Setup MQTT</a></li>
-				 	<li><a href="/tutorial/input-output-controller.html">IOC with a BBBW</a></li>
+				 	<li><a href="/tutorial/input-output-controller.html">Input-Output Controller with a BeagleBone Black Wireless</a></li>
 				 	<li><a href="/tutorial/node-red-web-application.html">Node-Red Web Application</a></li>
 				</ul>
 			</div>
