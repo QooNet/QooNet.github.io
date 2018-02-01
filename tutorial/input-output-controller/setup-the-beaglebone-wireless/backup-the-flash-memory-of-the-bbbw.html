@@ -17,58 +17,34 @@
 					<div class="item">
 						<h1>Backup the flash memory of the BBBW</h1>
 						<ul>
-						 	<li>With the BBBW powered off insert a blank micro SD card into the BBBW. The micro SD card slot is near the USB port</li>
-						 	<li>Insert a micro-USB cable into the BBBW and connect the other end into your linux computer.
-								<ul>
-								 	<li>Make sure the micro-USB cable supports data transfer. You can buy plenty of cheap cables that only supply 5V power. Throw those away!</li>
-								</ul>
+							<li>Power on the BBBW
+						 		<p>With the BBBW powered off insert a blank micro SD card into the BBBW. The micro SD card slot is near the USB port</p>
+						 		<p>Insert a micro-USB cable into the BBBW and connect the other end into your linux computer.
+									<span class="highlight">
+								 		Make sure the micro-USB cable supports data transfer. You can buy plenty of cheap cables that only supply 5V power. Throw those away!
+									</span>
+								</p>
+ 								<p>Wait for the BBBW to boot - it takes about three minutes. You should see the wireless (WL) LED, the BlueTooth (BT) LED light up and the USB0 LED blink.</p>
 							</li>
- 							<li>Wait for the BBBW to boot - it takes about three minutes.
-								<ul>
-								 	<li>You should see the wireless (WL) LED, the BlueTooth (BT) LED light up and the USB0 LED blink.</li>
-								</ul>
+							<li>Connect to the BBBW
+						 		<p>Open a terminal and log into the BBBW with<p>
+								<pre class="code-pre "><code langs="">ssh root@192.168.7.2</code></pre>
+								<p>In the initial configuration there is no password required for root</p>
 							</li>
-						 	<li>Open a terminal and log into the BBBW with
-								<ul>
-								 	<li>$ <strong>ssh root@192.168.7.2</strong>
-										<ul>
- 											<li>In the initial configuration there is no password required for root</li>
-										</ul>
-									</li>
- 									<li>Backup the flash memory by typing:
-										<ul>
-										 	<li>$ <strong>/opt/scripts/tools/eMMC/beaglebone-black-make-microSD-flasher-from-eMMC.sh</strong></li>
-										 	<li>It will take about 20-30 minutes to backup the flash. The terminal will give you progress on the backup.</li>
-										 	<li>When the backup is complete, the BBBW will power down itself.</li>
-										 	<li>Eject the micro-SD card and insert into your linux computer (not the BBBW).
-												<ul>
-												 	<li>edit the /boot/uEnv.txt file on the Linux partition on the microSD card
-														<ul>
- 															<li>add the '#' on the line with
-																<ul>
- 																	<li>'cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh'.</li>
-																</ul>
-															</li>
- 															<li>remove the '#' on the line with
-																<ul>
- 																	<li>cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3-bbbw.sh</li>
-																</ul>
-															</li>
-														</ul>
-													</li>
- 													<li>To restore the flash memory, insert the backup SD card into the BBBW and power on.
-														<ul>
-														 	<li>The backup will begin automatically.</li>
-														 	<li>It will take 15 minutes to restore.</li>
-														 	<li>During the restore only the USBn LED scan back and forth and the WL and BT LEDs are off.</li>
-														 	<li>When the restore is complete, the BBBW powers down</li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
+ 							<li>Backup the flash memory
+								<pre class="code-pre "><code langs="">/opt/scripts/tools/eMMC/beaglebone-black-make-microSD-flasher-from-eMMC.sh</code></pre>
+								<p>It will take about 20-30 minutes to backup the flash. The terminal will give you progress on the backup.
+									When the backup is complete, the BBBW will power down itself.
+								<p>Eject the micro-SD card and insert into your linux computer (not the BBBW).
+								Edit the /boot/uEnv.txt file on the Linux partition on the microSD card</p>
+								<p><span class="highlight">Insert '#' in the beginning of the line with </span><code  langs="">cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh</code></p>
+ 								<p><span class="highlight">Remove the '#' on the line with </span><code  langs="">cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3-bbbw.sh</code></p>
+							</li>
+ 							<li>To restore the flash memory,
+								<p>Insert the backup SD card into the BBBW and power on.The backup will begin automatically.
+									It will take 15 minutes to restore. During the restore only the USBn LED scan back and forth and the WL and BT LEDs are off.
+									When the restore is complete, the BBBW powers down
+								</p>
 							</li>
 						</ul>
 					</div>
