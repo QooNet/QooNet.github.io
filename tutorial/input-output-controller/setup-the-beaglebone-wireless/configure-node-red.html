@@ -5,7 +5,7 @@
 		<link rel="shortcut icon" href="/img/yggdrasil.ico">
 		<title>yggdrasilView</title>
 	</head>
-	<body  >
+	<body>
 		<div class="container">
 			<div class="main">
 				<div class="header">
@@ -16,107 +16,87 @@
 				<div class="content">
 					<div class="item">
 						<h1>Configure Node-Red</h1>
+						<p>We will use <a href="https://nodered.org/" target="_blank" rel="noopener">Node-Red</a>
+							for the programming the BBBW. Node-Red is already installed on the BBBW and loads on startup
+							but we will need to add some libraries</p>
 						<ul>
-						 	<li>We will use <a href="https://nodered.org/" target="_blank" rel="noopener">Node-Red</a> for the programming the BBBW</li>
-						 	<li>Node-Red is already installed on the BBBW but we will need to add some libraries
-								<ul>
-								 	<li>Log in as root into the BBBW</li>
-								 	<li>Change the directory to node-red
-										<ul>
-										 	<li>$ <strong>cd .node-red</strong></li>
-										</ul>
-									</li>
-						 			<li>Update the software repositopries
-										<ul>
-						 					<li>$ <strong>sudo apt-get update</strong></li>
-										</ul>
-									</li>
-						 			<li>Install <a href="https://github.com/julianduque/beaglebone-io" target="_blank" rel="noopener">BeagleBone-IO</a>
-										<ul>
-						 					<li>$ <strong>sudo npm install beaglebone-io</strong></li>
-										</ul>
-									</li>
-						 			<li>Install <a href="https://github.com/monteslu/node-red-contrib-gpio" target="_blank" rel="noopener">node-red-contrib-gpio</a>
-										<ul>
-						 					<li>$ <strong>sudo npm install node-red-contrib-gpio</strong></li>
-										</ul>
-									</li>
-						 			<li>Install the <a href="https://github.com/node-red/node-red-dashboard" target="_blank" rel="noopener">node-red-dashboard</a>
-										<ul>
-						 					<li>$ <strong>sudo npm install node-red-dashboard</strong></li>
-										</ul>
-									</li>
-								</ul>
+							<li> Update Node-Red libraries
+								<p>Log in as root into the BBBW and change the directory to node-red and update the software repositopries
+								<pre class="code-pre "><code langs="">cd .node-red
+sudo apt-get update</code></pre>
+								<p>Install
+									<a href="https://github.com/julianduque/beaglebone-io" target="_blank" rel="noopener">BeagleBone-IO</a>,
+								  <a href="https://github.com/monteslu/node-red-contrib-gpio" target="_blank" rel="noopener">node-red-contrib-gpio</a>,
+									<a href="https://github.com/node-red/node-red-dashboard" target="_blank" rel="noopener">node-red-dashboard</a>.
+								</p>
+								<pre class="code-pre "><code langs="">sudo npm install beaglebone-io
+sudo npm install node-red-contrib-gpio
+sudo npm install node-red-dashboard</code></pre>
 							</li>
-						 	<li>Node-Red is browser based and initially, access to the browser does not require a password.
-								<ul>
-						 			<li>This is fine if you plan to operate the BBBW behind a secure firewall.</li>
-						 			<li>Otherwise it is recommended to password protect node-red
-										<ul>
-						 					<li>edit the settings.js file in the root .node-red directory.</li>
-						 					<li>$ <strong>nano settings.js</strong></li>
-						 					<li>To password protect the node-red editor (highly recommended) Un-comment lines 107-114
-												<ul>
-						 							<li><img src="/images/tutorial/node-redAdminPwProtect.png" width="747" height="244" /></li>
-						 							<li>The password is bcrypted for the password "password".
-														<ul>
-						 									<li>Obviously it is best to change this.</li>
-						 									<li>You can use plain text better it is better to hash it.</li>
-						 									<li>There are many bcrypt calculators.
-																<ul>
-						 											<li>I use the one at <a href="https://bcrypt-generator.com" target="_blank" rel="noopener">bcrypt-generator.com</a></li>
-																</ul>
-								<div class="footer"><p>yggdrasilView</p></div>
-									</li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-						 					<li>To password protect any web pages the BBBW might serve through node-red, un-comment lines 120-121
-												<ul>
-						 							<li><span style="color: #00ffff;"><strong><img src="/images/tutorial/node-redWebPwProtect.png" width="861" height="150" /></strong></span></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
+						 	<li>Setup Node-Red access
+								<p>Node-Red is browser based and initially, access to the browser does not require a password.
+									This is fine if you plan to operate the BBBW behind a secure firewall.
+									Otherwise it is recommended to password protect node-red.
+									Edit the settings.js file in the root .node-red directory.</p>
+						 		<pre class="code-pre "><code langs="">nano settings.js</code></pre>
+						 		<p>To password protect the node-red editor
+									<span class="highlight">(highly recommended)</span> Un-comment the json object <b><i>adminAuth</i></b>
+								</p>
+  							<pre class="code-pre ">	// Securing Node-RED
+	// -----------------
+	// To password protect the Node-RED editor and admin API, the following
+	// property can be used. See http://nodered.org/docs/security.html for details.
+	adminAuth: {
+		type: "credentials",
+		users: [{
+			username: "admin",
+			password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
+			permissions: "*"
+		}]
+	},</code></pre>
+								<p>The password is bcrypted for the password "password". Obviously it is best to change this.
+									You can use plain text but it is better to hash it. There are many bcrypt calculators.
+									I use the one at <a href="https://bcrypt-generator.com" target="_blank" rel="noopener">bcrypt-generator.com</a>
+								</p>
+								<p>To password protect any web pages the BBBW might serve through node-red, un-comment
+								 	the json objects <b><i>httpNodeAuth</i></b> and <b><i>httpStaticAuth</i></b>.
+								</p>
+								<pre class="code-pre ">    // To password protect the node-defined HTTP endpoints (httpNodeRoot), or
+    // the static content (httpStatic), the following properties can be used.
+    // The pass field is a bcrypt hash of the password.
+    // See http://nodered.org/docs/security.html#generating-the-password-hash
+    httpNodeAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
+    httpStaticAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
+</code></pre>
 							</li>
 						 	<li>Change the default file name.
-								<ul>
-						 			<li>Node-Red stores the programs in a <a href="https://www.json.org/" target="_blank" rel="noopener">json</a> files called a flow.</li>
-						 			<li>In the initial configuration node-red appends the hostname to boot flow file.
-										<ul>
-						 					<li>For version control this can be annoying.</li>
-						 					<li>I uncomment out line 53:
-												<ul>
-						 							<li><div>flowFile: 'flows.json',</div></li>
-												</ul>
-											</li>
-						 					<li>For ease of reading the flows in a repository, I also uncomment line 57
-												<ul>
-						 							<li>flowFilePretty: true,</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
+								<p>Node-Red stores the programs in a
+									<a href="https://www.json.org/" target="_blank" rel="noopener">json</a>
+									files called a flow. In the initial configuration node-red appends the hostname to boot flow file.
+									For version control this can be annoying. To remove the appending of the hostname, uncomment
+									the json key:value pair <b><i>flowFile: 'flows.json'</i></b>
+								</p>
+								<pre class="code-pre "><code langs="">flowFile: 'flows.json',</code></pre>
+								<p>For ease of reading the flows in a repository,
+									uncomment the json key:value pair <b><i>flowFilePretty: true</i></b>
+								</p>
+								<pre class="code-pre "><code langs="">flowFilePretty: true,</code></pre>
 							</li>
-						 	<li>Reset the BBBW by pressing S1 (or power cycle)  to load the new installations
-								<ul>
-						 			<li>Open a browser and enter into the address bar:
-										<ul>
-						 					<li>http://hostname.local:1880
-												<ul>
-						 							<li>where hostname is the hostname of your BBBW</li>
-												</ul>
-											</li>
-					 						<li>You should get the following splash screen</li>
-						 					<li><a href="/images/tutorial/node-red-splash.png" target="_blank"><img src="/images/tutorial/node-red-splash.png" width="341" height="250" /></a></li>
-						 					<li>After entering the user name and  password you put into the settings.js file, you should see the Node-Red desktop</li>
-						 					<li><a href="/images/tutorial/node-red_blank.png" target="_blank"><img src="/images/tutorial/node-red_blank.png" alt="" width="331" height="250" /></a></li>
-										</ul>
-									</li>
-								</ul>
+						 	<li>Reset the BBBW by pressing S1 (or power cycle) to load the new installations
+								<p>Open a browser and enter into the address bar:</p>
+								<pre class="code-pre "><code langs="">http://&lt;hostname&gt;.local:1880</code></pre>
+								<p>where <b>&lt;hostname&gt;</b> is the hostname of your BBBW. You should get the following splash screen</p>
+					 			<center>
+									<a href="/images/tutorial/nodeRedSplash.png" target="_blank">
+										<img src="/images/tutorial/nodeRedSplash.png" width="341" height="250" />
+									</a>
+								</center>
+						 		<p>After entering the user name and password you put into the settings.js file, you should see the Node-Red desktop</p>
+						 		<center>
+									<a href="/images/tutorial/nodeRedDesktop.png" target="_blank">
+										<img src="/images/tutorial/nodeRedDesktop.png" alt="" width="331" height="250" />
+									</a>
+								</center>
 							</li>
 						</ul>
 					</div>
