@@ -18,46 +18,37 @@
 						<h1>Setup the wireless</h1>
 						<ul>
 							<li>From the prompt on the BBBW start the wireless configuration app by entering
-								<ul>
-						 			<li>$<strong> sudo connmanctl</strong></li>
-									<li>The BBBW will now display the connmanctl&gt; prompt
-										<ul>
-											<li>connmanctl&gt; <strong>scan wifi</strong></li>
-											<li>connmanctl&gt;<strong> services</strong>
-												<ul>
-													<li>You will see a list of wifi networks available</li>
- 													<li>On each line you will see the name of the wifi network and next to it the service name in the form of <em>wifi_xxx_yyy_managed_psk</em></li>
-												</ul>
-											</li>
-											<li>connmanctl&gt; <strong>agent on</strong></li>
-											<li>connmanctl&gt; <strong>connect wifi_xxx_yyy_managed_psk</strong>
-												<ul>
-													<li>where <em>wifi_xxx_yyy_managed_psk</em> is the name of the service that corresponds to your network</li>
-													<li>you will be prompted for a pass-phase for your network</li>
-													<li>you will be notified if the connection is successful</li>
-												</ul>
-											</li>
-											<li>connmanctl&gt; <strong>quit</strong></li>
-										</ul>
-									</li>
-								</ul>
+						 		<pre class="code-pre "><code langs="">sudo connmanctl</code></pre>
+							</li>
+							<li>The BBBW will now display the <b><i>connmanctl&gt;</i></b> prompt. Enter:
+								<pre class="code-pre "><code langs="">scan wifi
+services</code></pre>
+								<p>You will see a list of wifi networks available.
+									On each line you will see the name of the wifi network
+									and next to it the service name in the form of <b><i>wifi_xxx_yyy_managed_psk</i></b>
+								</p>
+								<pre class="code-pre "><code langs="">agent on
+connect wifi_xxx_yyy_managed_psk</code></pre>
+								<p>where <b><i>wifi_xxx_yyy_managed_psk</i></b>
+									is the name of the service that corresponds to your network.
+									You will be prompted for a pass-phase for your network.
+									You will be notified if the connection is successful
+								</p>
+								<p>Exit the <b><i>connmanctl</i></b> menu</p>
+								<pre class="code-pre "><code langs="">quit</code></pre>
 							</li>
 							<li>Check the network connection by typing
-								<ul>
-								 	<li>$ <strong>ifconfig -a</strong></li>
-								 	<li>you should see a valid ip address under wlan0</li>
-								</ul>
-						 	<li>Now you can remove the micro-USB cable and power the BBBW with a 5 V power supply
-								<ul>
-									<li>Or you can continue to power the BBBW with the micro-USB</li>
-								</ul>
+							 	<pre class="code-pre "><code langs="">ifconfig -a</code></pre>
+							 	<p>you should see a valid ip address under wlan0.
+									Now you can remove the micro-USB cable and power the BBBW with a
+									5 V power supply or you can continue to power the BBBW with the micro-USB.
+								</p>
 							</li>
 							<li>Log into the BBBW over the wireless
-								<ul>
-									<li>$ <strong>ssh debian@<em>&lt;hostname&gt;</em>.local</strong></li>
-									<li>where <strong><em>&lt;hostname&gt; </em></strong>is the hostname you setup in the previous step.</li>
-									<li>you can also use the ip address of wlan0 in place of &lt;hostname&gt;.local</li>
-								</ul>
+								<pre class="code-pre "><code langs="">ssh debian@&lt;hostname&gt;.local</code></pre>
+								<p>where <b>&lt;hostname&gt;</b> is the hostname you setup in the previous step.
+									You can also use the ip address of wlan0 in place of &lt;hostname&gt;.local
+								</p>
 							</li>
 						</ul>
 					</div>

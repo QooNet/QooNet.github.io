@@ -18,19 +18,13 @@
 						<h1>Change the host name</h1>
 						<p>The default host name of the BBBW is beaglebone. It is best to change this to something different so it can be uniquely identified on the network.</p>
 						<ul>
-						 	<li>Edit the host file using the <em>nano</em> text editor by typing
-								<ul>
-								 	<li>$ <strong>sudo nano /etc/hostname</strong></li>
-								 	<li>and change beaglebone to the desired host name</li>
-								 	<li>Cntrl-x will save the changes</li>
-								</ul>
+						 	<li>Edit the host file using the <b><i>nano</i></b> text editor by typing
+								 	<pre class="code-pre "><code langs="">sudo nano /etc/hostname</code></pre>
+								 	<p>and change beaglebone to the desired host name. <b><i>Cntrl-x</i></b> will save the changes</p>
 							</li>
-							<li>Edit the hosts file using the <em>nano</em> text editor by typing
-								<ul>
-								 	<li>$ <strong>sudo nano /etc/hosts</strong></li>
-								 	<li>and change every instance of beaglebone to the desired host name</li>
-								 	<li>Cntrl-x will save the changes</li>
-								</ul>
+							<li>Edit the hosts file using the <b><i>nano</i></b> text editor by typing
+								 	<pre class="code-pre "><code langs="">sudo nano /etc/hosts</code></pre>
+								 	<p>and change every instance of beaglebone to the desired host name. <b><i>Cntrl-x</i></b> will save the changes</p>
 							</li>
 							<li>Reset the BBBW by pressing S1 (or power cycle) and the new host name should appear on the prompt</li>
 						</ul>
