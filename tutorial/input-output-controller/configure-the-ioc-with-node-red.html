@@ -25,6 +25,62 @@
 								<pre class="code-pre "><code langs="">cd /root/.node-red/lib
 git clone https://github.com/yggdrasilView/flows.git</code></pre>
 							</li>
+							<li>Open the tutorial flow from the Libarary
+								<p>Open a browser and connect to Node-Red at <b>&lt;hostName&gt;.local:1880</b> where &lt;hostName&gt; is the host name of your BBBW
+									Click on the three horizontal bar icon on the upper right hand side of the node-red desktop to open the menu.
+									Navigate to <b><i>Import&gt;Library&gt;tutorial&gt;ioc&gt;greenLedFlow</i></b>.
+								</p>
+								<p>
+									The nodes for controlling the green LED appear.
+									Place the nodes how you would like on the screen. Rename the Flow tab by double clicking on the flow tab
+									and changing the name in the name field.
+								</p>
+								<center>
+									<a href="/images/tutorial/IocGreenLedFlowImported.png" target="_blank">
+										<img src="/images/tutorial/IocGreenLedFlowImported.png" width="609" height="250" />
+									</a>
+								</center>
+							</li>
+							<li>Edit the MQTT information
+								<p>
+									The MQTT broker username and password needs to be entered into the MQTT nodes.
+									Double click on any MQTT node. (they are in light purple) For example double click on the node labeled "green/intensity/get".
+									A dialog panel will open on the right side of the screen. Next to the <b><i>Server</i></b> field,
+									there is a pencil icon for editing the MQTT broker information.
+									Edit the MQTT broker information with the data for the MQTT broker you setup in the
+									<a href="/tutorial/setup-mqtt.html" target="_blank">previous section</a> of the tutorial.
+								</p>
+								<center>
+									<a href="/images/tutorial/IocGreenLedFlowMqttInfo.png" target="_blank">
+										<img src="/images/tutorial/IocGreenLedFlowMqttInfo.png" width="536" height="250" />
+									</a>
+								</center>
+							</li>
+							<li> Deploy the Flow
+								<p>
+									Once the MQTT information has been entered, click on the Deploy button in the upper right hand corner of the screen.
+									All the blue dots should disappear from the screen and green connected boxes should appear underneath the MQTT flows and the gpio flows.
+								</p>
+								<center>
+									<a href="/images/tutorial/IocGreenLedFlowDeployed.png" target="_blank">
+										<img src="/images/tutorial/IocGreenLedFlowDeployed.png" width="617" height="250" />
+									</a>
+								</center>
+							</li>
+							<li>Test the flow
+								<p>
+									Press the green LED button on the test device and observe messages generated on the MQTT broker.
+								</p>
+								<center>
+									<a href="/images/tutorial/MQTTBrokerGreenButtonPressed.png" target="_blank">
+										<img src="/images/tutorial/MQTTBrokerGreenButtonPressed.png" width="340" height="250" />
+									</a>
+								</center>
+							</li>
+							<li> Add the Red LED Flow
+							</li>
+							<li>Explore the Flows
+							</li>
 						</ul>
 					</div>
 				</div>
