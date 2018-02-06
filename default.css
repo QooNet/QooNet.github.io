@@ -40,7 +40,7 @@ cite {
 	padding-left: 28px;
 }
 h1,h2,h3 {
-	color: #367EA6;
+	color: #1c4587;
 	padding-top: 6px;
 }
 
@@ -68,12 +68,12 @@ h1,h2,h3 {
 	padding-bottom: 6px;
 }
 .header {
-	background: url(img/yggdrasil160.jpg) no-repeat, url(img/header.gif) repeat-x
+	background: url(img/yggdrasil160.png) no-repeat, url(img/header.jpg) repeat-x
 }
 
 /* title */
 .title h1 {
-	color: #FFF;
+	color: #1c4587;
 	font: normal 3em Verdana,sans-serif;
 	height: 150px;
 	line-height: 150px;
