@@ -49,6 +49,7 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									there is a pencil icon for editing the MQTT broker information.
 									Edit the MQTT broker information with the data for the MQTT broker you setup in the
 									<a href="/tutorial/setup-mqtt.html" target="_blank">previous section</a> of the tutorial.
+									For the Client ID field under the Connection tab, use a unique identifier so that MQTT messages do not get mixed.
 								</p>
 								<center>
 									<a href="/images/tutorial/IocGreenLedFlowMqttInfo.png" target="_blank">
@@ -72,8 +73,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									Press the green LED button on the test device and observe messages generated on the MQTT broker.
 								</p>
 								<center>
-									<a href="/images/tutorial/MQTTBrokerGreenButtonPressed.png" target="_blank">
-										<img src="/images/tutorial/MQTTBrokerGreenButtonPressed.png" width="340" height="250" />
+									<a href="/images/tutorial/greenFlowIocShiftr.png" target="_blank">
+										<img src="/images/tutorial/greenFlowIocShiftr.png" width="340" height="250" />
 									</a>
 								</center>
 							</li>
@@ -89,8 +90,38 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									Navigate to <b><i>Import&gt;Library&gt;tutorial&gt;ioc&gt;redLedFlow</i></b>. The nodes for controlling the green LED appear.
 									Place the nodes how you would like on the screen.
 								</p>
+								<p>
+									Again edit the MQTT information as you have done with the Green LED flow.
+									However, make sure to use a different Client ID from the Green LED flow so that MQTT messages do not get mixed.
+								</p>
+								<p>
+									Deploy as you did with the Green LED flow and test the flow by pressing the red button an examining the MQTT output.
+									You should see a reaction on the MQTT broker similar to the image below.
+								</p>
+								<center>
+									<a href="/images/tutorial/redFlowIocShiftr.png" target="_blank">
+										<img src="/images/tutorial/redFlowIocShiftr.png" width="340" height="250" />
+									</a>
+								</center>
 							</li>
 							<li>Explore the Flows
+								<p>
+									The nice thing about the Node-Red flow diagram is that it makes the program self documenting.
+									However, you should take the time to examine what is contained inside each of the nodes contained in a node.
+									Below is a screen shot of <b><i>buttonPressed</i></b> node in the <b><i>greenLED</i></b> flow.
+								</p>
+								<center>
+									<a href="/images/tutorial/exploreNodeInFlow.png" target="_blank">
+										<img src="/images/tutorial/exploreNodeInFlow.png" width="340" height="250" />
+									</a>
+								</center>
+								<p>
+									There are many tutorials bout how to use Node-Red. I recommend that you start from the
+									<a href="https://nodered.org/docs/getting-started/first-flow" target="_blank">
+										offical Node-Red Website
+									</a>
+									and explore the internet as you go.
+								</p>
 							</li>
 						</ul>
 					</div>
