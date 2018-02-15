@@ -4,6 +4,8 @@
 		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
 		<link rel="shortcut icon" href="/img/yggdrasil.ico">
 		<title>yggdrasilView</title>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+    <script>$(function(){$("#homeMenu").load("/homeMenu.html"); });</script>
 	</head>
 	<body  >
 		<div class="container">
@@ -15,24 +17,16 @@
 				</div>
 				<div class="content">
 					<div class="item">
-						<h1>Solutions</h1>
-						<ul>
-						 	<li><a href="/solutions/application-templates.html">Application Templates</a></li>
-						 	<li><a href="/solutions/synchronous-timing.html">Synchronous Timing</a></li>
-						 	<li><a href="/solutions/data-logging.html">Data Logging</a></li>
-						 	<li><a href="/solutions/data-structures.html">Data Structures</a></li>
-						 	<li><a href="/solutions/data-viewers.html">Data Viewers</a></li>
-						<ul>
+						<h1>Overview</h1>
+					 	<a href="/overview/theProblem.html"><h2>The Problem</h2></a>
+						<a href="/overview/internetOfThings.html"><h2>The Internet of Things (IoT)</h2></a>
+						<a href="/overview/theSolution.html"><h2>The Solution</h2></a>
+						<a href="/overview/architecture.html"><h2>YggdrasilView Architecture</h2></a>
 					</div>
 				</div>
 			</div>
 			<div class="sidenav">
-				<a href="/index.html"><h1>Overview</h1></a>
-				<ul>
-					<li><a href="/services.html">Services</a></li>
-					<li><a href="/solutions.html">Solutions</a></li>
-					<li><a href="/tutorial.html">Tutorial</a></li>
-				</ul>
+				<div id='homeMenu'></div>
 			</div>
 			<div class="clearer"><span /></div>
 			<div class="footer"><p><a href="/index.html">yggdrasilView</a></p></div>

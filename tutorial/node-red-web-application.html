@@ -4,6 +4,9 @@
 		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
 		<link rel="shortcut icon" href="/img/yggdrasil.ico">
 		<title>yggdrasilView</title>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+    <script>$(function(){$("#homeMenu").load("/homeMenu.html"); });</script>
+		<script>$(function(){$("#tutorialMenu").load("/tutorial/tutorialMenu.html"); });</script>
 	</head>
 	<body  >
 		<div class="container">
@@ -110,25 +113,58 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 								</p>
 								<p>
 									The dashboard components used in these flows are the slider, on/off switch, and guage.
+									The dashboard nodes are in cyan. The dashboard itself is served on another web page
+									<b>&lt;web-server&gt;:1880/ui</b> where &lt;web-server&gt;
+										is the host name or IP address of the application server where you have installed Node-Red.
+										The dashboard web page for this tutorial looks as below:
 								</p>
+								<center>
+									<a href="/images/tutorial/webAppWhite.png" target="_blank">
+										<img src="/images/tutorial/webAppWhite.png" width="600" />
+									</a>
+								</center>
+								<p>Each dashboard node must be assigned to a ui-group
+									and in turn each ui-group must be assigned to a tab. The assignment of the ui-group and tab
+									defined in by double clicking on a dashboard node and editing the Group field.
+									The size of the dashboard node can also be specified as well.
+									The order of dashboard nodes in the group determines how they will be placed.
+									You can organize the tab and group layout under
+									the <b><i>Layout</i></b> sub-tab or the <b><i>Dashboard</i></b> tab.
+									The screen shot below shows how I arranged the nodes for this tutorial
+								</p>
+								<center>
+									<a href="/images/tutorial/webAppDashBoardTab.png" target="_blank">
+										<img src="/images/tutorial/webAppDashBoardTab.png" width="600" />
+									</a>
+								</center>
+							</li>
+							<li>Customize the Dashboard
+								<p>
+									The web page defaults as <b><i>/ui</i></b> but this can be changed in  in the <b><i>~/.node-red/settings</i></b> file
+								</p>
+								<pre class="code-pre "><code langs="">// If you installed the optional node-red-dashboard you can set it's path
+// relative to httpRoot
+ui: { path: "&lt;desired_webpage_name&gt;" },</code></pre>
+								<p>
+									Also you can change the web page title under the <b><i>Site</i></b> sub-tab of the <b><i>Dashboard</i></b> tab.
+									You can change the color scheme of the dashboard web page
+									under the <b><i>Theme</i></b> sub-tab of the <b><i>Dashboard</i></b> tab.
+									Finally, you can change the web icon be replacing the <b><i>iconYYxYY.png</i></b> files in the
+									<b><i>~/.node-red/node_modules/node-red-dashboard/dist</i></b> directory with the image files of your choice.
+								</p>
+								<center>
+										<a href="/images/tutorial/uiCustomized.png" target="_blank">
+											<img src="/images/tutorial/uiCustomized.png" width="600" />
+										</a>
+								</center>
+							</li>
 						<ul>
 					</div>
 				</div>
 			</div>
 			<div class="sidenav">
-				<a href="/index.html"><h1>Overview</h1></a>
-				<ul>
-					<li><a href="/projects.html">Projects</a></li>
-					<li><a href="/tutorial.html">Tutorial</a></li>
-					<li><a href="https://github.com/yggdrasilView" target="_blank" rel="noopener">Code Base</a></li>
-				</ul>
-				<a href="/tutorial.html"><h1>Tutorial</h1></a>
-				<ul>
-				 	<li><a href="/tutorial/test-device-design.html">Test Device Design</a></li>
-				 	<li><a href="/tutorial/setup-mqtt.html">Setup MQTT</a></li>
-				 	<li><a href="/tutorial/input-output-controller.html">IOC with a BBBW</a></li>
-				 	<li><a href="/tutorial/node-red-web-application.html">Node-Red Web Application</a></li>
-				</ul>
+				<div id='homeMenu'></div>
+				<div id='tutorialMenu'></div>
 			</div>
 			<div class="clearer"><span /></div>
 			<div class="footer"><p><a href="/index.html">yggdrasilView</a></p></div>

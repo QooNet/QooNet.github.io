@@ -4,6 +4,8 @@
 		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
 		<link rel="shortcut icon" href="/img/yggdrasil.ico">
 		<title>yggdrasilView</title>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+    <script>$(function(){$("#homeMenu").load("/homeMenu.html"); });</script>
 	</head>
 	<body  >
 		<div class="container">
@@ -17,29 +19,16 @@
 					<div class="item">
 						<h1>YggdrasilView - An Open Source IoT Control System</h1>
 						<p>YggdrasilView is an open source control platform optimized for rapid development.</p>
-						<ul>
-							<li>This platform is a quasi-state machine system based on inexpensive, commercial, open source, small form factor microcontrollers and computers.</li>
-							<li>Communication is based on a secure, open source, wireless MQTT protocol. </li>
-							<li>High speed synchronization is accomplished with a spread spectrum wireless timing system.</li>
-							<li>The wireless nature of the platform drastically reduces the cable plant and physical footprint of the system.</li>
-							<li>The state machine and MQTT implementation ensure reliability and security.</li>
-							<li>A platform independent, web based user interface allow for multiple users and easy remote monitoring.</li>
-						</ul>
-						<p>
+						<center>
 							<a href="/images/yggdrasilViewArchitecture.jpg" target="_blank" rel="noopener">
-								<img src="/images/yggdrasilViewArchitecture.jpg" width="600"" />
+								<img src="/images/yggdrasilViewArchitecture.jpg" width="600" />
 							</a>
-						</p>
+						</center>
 					</div>
 				</div>
 			</div>
 			<div class="sidenav">
-				<a href="/index.html"><h1>Overview</h1></a>
-				<ul>
-					<li><a href="/projects.html">Projects</a></li>
-					<li><a href="/tutorial.html">Tutorial</a></li>
-					<li><a href="https://github.com/yggdrasilView" target="_blank" rel="noopener">Code Base</a></li>
-				</ul>
+				<div id='homeMenu'></div>
 			</div>
 			<div class="clearer"><span /></div>
 			<div class="footer"><p><a href="/index.html">yggdrasilView</a></p></div>

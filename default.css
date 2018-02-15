@@ -39,9 +39,18 @@ cite {
 	font: normal 1.3em "Lucida Sans Unicode",serif;
 	padding-left: 28px;
 }
-h1,h2,h3 {
+h1 {
 	color: #1c4587;
 	padding-top: 6px;
+}
+h2 {
+	color: #1c4587;
+	font-size: 1.0em;
+	padding-top: 0.5em;
+}
+h3 {
+	color: #1c4587;
+	font-size: 1.0em;
 }
 
 /* misc */
