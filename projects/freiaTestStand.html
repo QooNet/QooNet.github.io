@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/yggdrasilView/default.css" media="screen" />
+		<link rel="shortcut icon" href="/yggdrasilView/img/yggdrasil.ico">
+		<title>yggdrasilView</title>
+		<script src="/yggdrasilView/js/jquery-3.3.1.min.js"></script>
+    <script>$(function(){$("#homeMenu").load("/yggdrasilView/homeMenu.html"); });</script>
+		<script>$(function(){$("#projectsMenu").load("/yggdrasilView/projects/projectsMenu.html"); });</script>
+	</head>
+	<body  >
+		<div class="container">
+			<div class="main">
+				<div class="header">
+					<div class="title">
+						<h1>yggdrasilView</h1>
+					</div>
+				</div>
+				<div class="content">
+					<div class="item">
+						<h1>FREIA Test Stand</h1>
+						<table><tbody>
+							<tr>
+								<td width="30%" valign="top">
+									<h2>Web Applications</h2>
+									<ul>
+										<li><a href="https://aig.esss.lu.se:8443/ItsArchiver/" target="_blank">Archiver</a></li>
+										<li><a href="https://aig.esss.lu.se:8443/ItsBlueModGwt/" target="_blank">PPT Modulator</a></li>
+										<li><a href="https://itsnet-llrf-app.herokuapp.com/" target="_blank">Low Level RF</a></li>
+										<li><a href="https://aig.esss.lu.se:8443/ItsTimeline/" target="_blank">Timeline Generator</a></li>
+										<li><a href="https://aig.esss.lu.se:8443/ItsToshiba/" target="_blank">Klystron Interlocks</a></li>
+									</ul>
+								</td>
+								<td width="70%">
+									<center>
+										<a href="https://shiftr.io/yggdrasilView/uppsala" target="_blank"><h2>MQTT Broker</h2></a>
+										<iframe src="https://shiftr.io/yggdrasilView/uppsala/embed?zoom=.7" width="600" height="500" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+									</center>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+			</div>
+			<div class="sidenav">
+				<div id='homeMenu'></div>
+				<div id='projectsMenu'></div>
+			</div>
+			<div class="clearer"><span /></div>
+			<div class="footer"><p><a href="/yggdrasilView/index.html">yggdrasilView</a></p></div>
+		</div>
+	</body>
+</html>
