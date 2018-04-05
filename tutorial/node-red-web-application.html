@@ -1,19 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="/yggdrasilView/default.css" media="screen" />
-		<link rel="shortcut icon" href="/yggdrasilView/img/yggdrasil.ico">
-		<title>yggdrasilView</title>
-		<script src="/yggdrasilView/js/jquery-3.3.1.min.js"></script>
-    <script>$(function(){$("#homeMenu").load("/yggdrasilView/homeMenu.html"); });</script>
-		<script>$(function(){$("#tutorialMenu").load("/yggdrasilView/tutorial/tutorialMenu.html"); });</script>
+		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
+		<link rel="shortcut icon" href="/img/QooNet.ico">
+		<title>QooNet</title>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+    <script>$(function(){$("#homeMenu").load("/homeMenu.html"); });</script>
+		<script>$(function(){$("#tutorialMenu").load("/tutorial/tutorialMenu.html"); });</script>
 	</head>
 	<body  >
 		<div class="container">
 			<div class="main">
 				<div class="header">
 					<div class="title">
-						<h1>yggdrasilView</h1>
+						<h1>QooNet</h1>
 					</div>
 				</div>
 				<div class="content">
@@ -21,7 +21,7 @@
 						<h1>Node-Red Web Application</h1>
 						<p>
 							This part of the tutorial assumes that you have completed the section on
-							<a href="/yggdrasilView/tutorial/input-output-controller/configure-the-ioc-with-node-red.html" target="_blank">configuring the IOC with node-Red</a>
+							<a href="/tutorial/input-output-controller/configure-the-ioc-with-node-red.html" target="_blank">configuring the IOC with node-Red</a>
 						</p>
 						<ul>
 						 	<li>Configure the Server
@@ -42,10 +42,10 @@
 							<li>Import the tutorial flow libraries into the application server
 								<p>In the application server, change the directory to library
 									directory for your node-red installation and clone the
-									<a href="https://github.com/yggdrasilView/flows" target="_blank">YggdrasilView flows repository</a>
+									<a href="https://github.com/flows" target="_blank">QooNet flows repository</a>
 								</p>
 								<pre class="code-pre "><code langs="">cd ~/.node-red/lib
-git clone https://github.com/yggdrasilView/flows.git</code></pre>
+git clone https://github.com/flows.git</code></pre>
 							</li>
 							<li>Open the tutorial flow from the Libarary
 								<p>Open a browser and connect to Node-Red at <b>&lt;web-server&gt;:1880</b> where &lt;web-server&gt;
@@ -59,8 +59,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									and changing the name in the name field.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/ImportedWebAppFlow.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/ImportedWebAppFlow.png" width="600" />
+									<a href="/images/tutorial/ImportedWebAppFlow.png" target="_blank">
+										<img src="/images/tutorial/ImportedWebAppFlow.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -72,12 +72,12 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									A dialog panel will open on the right side of the screen. Next to the <b><i>Server</i></b> field,
 									there is a pencil icon for editing the MQTT broker information.
 									Edit the MQTT broker information with the data for the MQTT broker you setup in the
-									<a href="/yggdrasilView/tutorial/setup-mqtt.html" target="_blank">previous section</a> of the tutorial.
+									<a href="/tutorial/setup-mqtt.html" target="_blank">previous section</a> of the tutorial.
 									For the Client ID field under the Connection tab, use a unique identifier so that MQTT messages do not get mixed.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/WebAppMqttConfig.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/WebAppMqttConfig.png" width="600" />
+									<a href="/images/tutorial/WebAppMqttConfig.png" target="_blank">
+										<img src="/images/tutorial/WebAppMqttConfig.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -87,8 +87,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									All the blue dots should disappear from the screen and green connected boxes should appear underneath the MQTT flows and the gpio flows.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/WebAppFlowDeployed.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/WebAppFlowDeployed.png" width="600" />
+									<a href="/images/tutorial/WebAppFlowDeployed.png" target="_blank">
+										<img src="/images/tutorial/WebAppFlowDeployed.png" width="600" />
 									</a>
 								</center>
 								<p>
@@ -96,8 +96,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									with the IOC and the other connection with the web application.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/webAppShiftr.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/webAppShiftr.png" width="600" />
+									<a href="/images/tutorial/webAppShiftr.png" target="_blank">
+										<img src="/images/tutorial/webAppShiftr.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -119,8 +119,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 										The dashboard web page for this tutorial looks as below:
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/webAppWhite.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/webAppWhite.png" width="600" />
+									<a href="/images/tutorial/webAppWhite.png" target="_blank">
+										<img src="/images/tutorial/webAppWhite.png" width="600" />
 									</a>
 								</center>
 								<p>Each dashboard node must be assigned to a ui-group
@@ -133,8 +133,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									The screen shot below shows how I arranged the nodes for this tutorial
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/webAppDashBoardTab.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/webAppDashBoardTab.png" width="600" />
+									<a href="/images/tutorial/webAppDashBoardTab.png" target="_blank">
+										<img src="/images/tutorial/webAppDashBoardTab.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -153,8 +153,8 @@ ui: { path: "&lt;desired_webpage_name&gt;" },</code></pre>
 									<b><i>~/.node-red/node_modules/node-red-dashboard/dist</i></b> directory with the image files of your choice.
 								</p>
 								<center>
-										<a href="/yggdrasilView/images/tutorial/uiCustomized.png" target="_blank">
-											<img src="/yggdrasilView/images/tutorial/uiCustomized.png" width="600" />
+										<a href="/images/tutorial/uiCustomized.png" target="_blank">
+											<img src="/images/tutorial/uiCustomized.png" width="600" />
 										</a>
 								</center>
 							</li>
@@ -167,7 +167,7 @@ ui: { path: "&lt;desired_webpage_name&gt;" },</code></pre>
 				<div id='tutorialMenu'></div>
 			</div>
 			<div class="clearer"><span /></div>
-			<div class="footer"><p><a href="/yggdrasilView/index.html">yggdrasilView</a></p></div>
+			<div class="footer"><p><a href="/index.html">QooNet</a></p></div>
 		</div>
 	</body>
 </html>

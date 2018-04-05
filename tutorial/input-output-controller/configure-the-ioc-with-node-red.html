@@ -1,20 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="/yggdrasilView/default.css" media="screen" />
-		<link rel="shortcut icon" href="/yggdrasilView/img/yggdrasil.ico">
-		<title>yggdrasilView</title>
-		<script src="/yggdrasilView/js/jquery-3.3.1.min.js"></script>
-    <script>$(function(){$("#homeMenu").load("/yggdrasilView/homeMenu.html"); });</script>
-		<script>$(function(){$("#tutorialMenu").load("/yggdrasilView/tutorial/tutorialMenu.html"); });</script>
-		<script>$(function(){$("#iocMenu").load("/yggdrasilView/tutorial/input-output-controller/iocMenu.html"); });</script>
+		<link rel="stylesheet" type="text/css" href="/default.css" media="screen" />
+		<link rel="shortcut icon" href="/img/QooNet.ico">
+		<title>QooNet</title>
+		<script src="/js/jquery-3.3.1.min.js"></script>
+    <script>$(function(){$("#homeMenu").load("/homeMenu.html"); });</script>
+		<script>$(function(){$("#tutorialMenu").load("/tutorial/tutorialMenu.html"); });</script>
+		<script>$(function(){$("#iocMenu").load("/tutorial/input-output-controller/iocMenu.html"); });</script>
 	</head>
 	<body  >
 		<div class="container">
 			<div class="main">
 				<div class="header">
 					<div class="title">
-						<h1>yggdrasilView</h1>
+						<h1>QooNet</h1>
 					</div>
 				</div>
 				<div class="content">
@@ -24,10 +24,10 @@
 							<li>Import the tutorial flow libraries into the BBBW
 								<p>ssh into the BBBW as root and change the directory to library
 									directory for your node-red installation and clone the
-									<a href="https://github.com/yggdrasilView/flows" target="_blank">YggdrasilView flows repository</a>
+									<a href="https://github.com/flows" target="_blank">QooNet flows repository</a>
 								</p>
 								<pre class="code-pre "><code langs="">cd /root/.node-red/lib
-git clone https://github.com/yggdrasilView/flows.git</code></pre>
+git clone https://github.com/flows.git</code></pre>
 							</li>
 							<li>Open the tutorial flow from the Libarary
 								<p>Open a browser and connect to Node-Red at <b>&lt;hostName&gt;.local:1880</b> where &lt;hostName&gt; is the host name of your BBBW
@@ -40,8 +40,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									and changing the name in the name field.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/ImportedIocFlow.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/ImportedIocFlow.png" width="600" />
+									<a href="/images/tutorial/ImportedIocFlow.png" target="_blank">
+										<img src="/images/tutorial/ImportedIocFlow.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -52,12 +52,12 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									A dialog panel will open on the right side of the screen. Next to the <b><i>Server</i></b> field,
 									there is a pencil icon for editing the MQTT broker information.
 									Edit the MQTT broker information with the data for the MQTT broker you setup in the
-									<a href="/yggdrasilView/tutorial/setup-mqtt.html" target="_blank">previous section</a> of the tutorial.
+									<a href="/tutorial/setup-mqtt.html" target="_blank">previous section</a> of the tutorial.
 									For the Client ID field under the Connection tab, use a unique identifier so that MQTT messages do not get mixed.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/IocMqttConfig.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/IocMqttConfig.png" width="600"  />
+									<a href="/images/tutorial/IocMqttConfig.png" target="_blank">
+										<img src="/images/tutorial/IocMqttConfig.png" width="600"  />
 									</a>
 								</center>
 							</li>
@@ -67,8 +67,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									All the blue dots should disappear from the screen and green connected boxes should appear underneath the MQTT flows and the gpio flows.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/IocDeployed.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/IocDeployed.png" width="600" />
+									<a href="/images/tutorial/IocDeployed.png" target="_blank">
+										<img src="/images/tutorial/IocDeployed.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -77,8 +77,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									Press the LED buttons on the test device and observe messages generated on the MQTT broker.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/IocShiftr.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/IocShiftr.png" width="600" />
+									<a href="/images/tutorial/IocShiftr.png" target="_blank">
+										<img src="/images/tutorial/IocShiftr.png" width="600" />
 									</a>
 								</center>
 							</li>
@@ -89,8 +89,8 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 									Below is a screen shot of the <b><i>buttonPressed</i></b> node.
 								</p>
 								<center>
-									<a href="/yggdrasilView/images/tutorial/exploreNodeInFlow.png" target="_blank">
-										<img src="/yggdrasilView/images/tutorial/exploreNodeInFlow.png" width="600"  />
+									<a href="/images/tutorial/exploreNodeInFlow.png" target="_blank">
+										<img src="/images/tutorial/exploreNodeInFlow.png" width="600"  />
 									</a>
 								</center>
 								<p>
@@ -111,7 +111,7 @@ git clone https://github.com/yggdrasilView/flows.git</code></pre>
 				<div id='iocMenu'></div>
 			</div>
 			<div class="clearer"><span /></div>
-			<div class="footer"><p><a href="/yggdrasilView/index.html">yggdrasilView</a></p></div>
+			<div class="footer"><p><a href="/index.html">QooNet</a></p></div>
 		</div>
 	</body>
 </html>
