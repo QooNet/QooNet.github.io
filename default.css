@@ -10,7 +10,7 @@ a:hover {
 	color: #06F;
 }
 body {
-	background: #d0d0d0;
+	background: #ffffff;
 	color: #444;
 	font: normal 100% "Lucida Sans Unicode",sans-serif;
 	margin: 0;
@@ -40,16 +40,16 @@ cite {
 	padding-left: 28px;
 }
 h1 {
-	color: #1c4587;
+	color: #000000;
 	padding-top: 6px;
 }
 h2 {
-	color: #1c4587;
+	color: #000000;
 	font-size: 1.0em;
 	padding-top: 0.5em;
 }
 h3 {
-	color: #1c4587;
+	color: #000000;
 	font-size: 1.0em;
 }
 
@@ -82,8 +82,8 @@ h3 {
 
 /* title */
 .title h1 {
-	color: #1c4587;
-	font: normal 3em Verdana,sans-serif;
+	color: #ffffff;
+	font: bold 3em Verdana,sans-serif;
 	height: 150px;
 	line-height: 150px;
 	margin-bottom: 8px;
@@ -112,7 +112,7 @@ h3 {
 
 /* main */
 .main {
-	background: #d0d0d0;
+	background: #ffffff;
 	clear: both;
 	padding: 8px 18px;
 }
@@ -122,25 +122,24 @@ h3 {
 	padding-left: 12px;
 }
 .sidenav {
-	background: #EEE;
-	border: 1px solid #E5E5E5;
+	background: #ffffff;
+	border: 1px solid #ffffff;
 	float: left;
 	width: 25%;
 }
 .sidenav h1 {
-	color: #666;
+	color: #000000;
 	font-size: 1.2em;
 	height: 20px;
 	margin-top: 1.2em;
 }
 .sidenav ul {
-	border-top: 1px solid #FAFAFA;
-	background: url(img/bgul.gif) repeat-x;
+	border-top: 1px solid #ffffff;
 	margin: 0;
 	padding: 0;
 }
 .sidenav li {
-	border: 1px solid #FAFAFA;
+	border: 1px solid #ffffff;
 	border-top: none;
 	list-style: none;
 	margin: 0;
@@ -165,7 +164,7 @@ h3 {
 .content .item {
 	padding: 6px 12px;
 	border: 0px solid #EEE;
-	background: #d0d0d0;
+	background: #ffffff;
 	margin-bottom: 8px;
 }
 .content .descr {
@@ -173,7 +172,7 @@ h3 {
 	margin-bottom: 6px;
 }
 .content li {
-	list-style: url(img/li.jpg);
+	list-style-type: disk;
 	margin-left: 18px;
 	font-size: 1.0em;
 	padding-top: 3px;
@@ -181,6 +180,14 @@ h3 {
 .content ul {
 	font-size: 1.0em;
 	padding-bottom: 10px;
+}
+.content a {
+	color: #000000;
+	text-decoration: underline;
+}
+.content a:hover {
+	color: #06F;
+	text-decoration: underline;
 }
 
 /* search form */
@@ -200,7 +207,7 @@ form {
 
 /* footer */
 .footer {
-	background: #d0d0d0;
+	background: #ffffff;
 	border: 0px solid #EEE;
 	color: #666;
 	font-size: 1.1em;
@@ -209,8 +216,8 @@ form {
 	padding: 6px;
 }
 .footer a {
-	color: #36C;
-	text-decoration: none;
+	color: #000000;
+	text-decoration: underline;
 }
 .footer a:hover {
 	color: #06F;
